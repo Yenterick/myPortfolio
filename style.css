@@ -61,6 +61,12 @@ body {
     text-align: center;
 }
 
+#about-me p {
+    max-width: 400px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 #about-me img{
     max-height: 200px;
     max-width: 200px;
@@ -99,10 +105,15 @@ hr {
 }
 
 #skills p {
-    transform: translate(0,-50%)
+    text-align: center;
+    margin: 10px;
+    transform: translate(0,-50%);
 }
 
 .slider {
+    --width: 100px;
+    --height: 150px;
+    --quantity: 10;
     width: 100%;
     position: relative;
     height: var(--height);
@@ -134,6 +145,25 @@ hr {
     width: 100%;
 }
 
+@media (max-width: 900px) {
+    .slider .list .item img {
+        width: 80%;
+    }   
+}
+
+@media (max-width: 500px) {
+
+    .slider .list .item {
+    width: calc(var(--width) * 0.4);
+    }
+
+    .slider {
+        height: calc(var(--height) * 0.4);
+    }
+}
+
+
+
 .slider:hover .item{
     animation-play-state: paused!important;
     filter: grayscale(1);
@@ -150,3 +180,81 @@ hr {
         left: 100%;
     }
 }
+
+/* Contact Me */
+
+footer {
+    background-color: var(--navy);
+    min-height: 450px;
+    position: relative;
+}
+
+footer #contact-me {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    color: var(--white);
+}
+
+#contact-me h2 {
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+#contact-me button {
+    margin-top: 15px;
+    min-width: 80px;
+    min-height: 30px;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 600;
+    align-self: flex-end;
+    border: transparent solid;
+    transition: transform 0.3s ease-in-out;
+}
+
+#contact-me button:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#contact-me button:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease-out;
+}
+
+#contact-me input {
+    padding: 10px;
+    min-width: 300px;
+}
+
+#contact-me label {
+    align-self: flex-start;
+    padding: 10px;
+}
+
+#contact-me textarea {
+    padding: 10px;
+    height: 80px;
+    min-width: 300px;
+    text-align: start;
+    vertical-align: text-top;
+    resize: none;
+    overflow: hidden;
+}
+
+/* info */
+
+.info {
+    color: var(--gray);
+    opacity: 25%;
+    width: 100%;
+    justify-items: center;
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+
